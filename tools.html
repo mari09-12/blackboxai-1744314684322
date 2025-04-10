@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas - Komorebi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/tools.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-green-500 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Komorebi</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                    <li><a href="tools.html" class="hover:underline font-bold">Herramientas</a></li>
+                    <li><a href="record_emotion.html" class="hover:underline">Registrar Emoción</a></li>
+                    <li><a href="history.html" class="hover:underline">Historial</a></li>
+                    <li><a href="settings.html" class="hover:underline">Configuración</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <div class="mb-8">
+            <h2 class="text-3xl font-semibold mb-4">Herramientas de Mindfulness y Gestión Emocional</h2>
+            
+            <!-- Filtros -->
+            <div class="mb-6 flex space-x-4">
+                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 active" data-category="all">
+                    Todas
+                </button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-category="mindfulness">
+                    Mindfulness
+                </button>
+                <button class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600" data-category="otros">
+                    Otras Técnicas
+                </button>
+            </div>
+
+            <!-- Barra de búsqueda -->
+            <div class="mb-6">
+                <input type="text" 
+                       id="searchTools" 
+                       placeholder="Buscar herramientas..." 
+                       class="w-full p-2 border border-gray-300 rounded shadow-sm focus:border-green-500 focus:ring focus:ring-green-200">
+            </div>
+
+            <!-- Grid de herramientas -->
+            <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Las tarjetas de herramientas se cargarán dinámicamente aquí -->
+                <div class="animate-pulse">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-full mb-2"></div>
+                        <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Template para las tarjetas de herramientas -->
+    <template id="tool-template">
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold mb-3"></h3>
+            <div class="mb-4">
+                <span class="inline-block bg-green-100 text-green-800 text-sm px-2 py-1 rounded"></span>
+            </div>
+            <p class="text-gray-600 mb-4"></p>
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2">¿Cómo funciona?</h4>
+                <p class="text-gray-600"></p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Pasos a seguir:</h4>
+                <ol class="list-decimal list-inside text-gray-600"></ol>
+            </div>
+            <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
+                Ver más detalles
+            </button>
+        </div>
+    </template>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
