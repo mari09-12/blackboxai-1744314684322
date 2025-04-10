@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Emoción - Komorebi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/emotions.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-green-500 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Komorebi</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                    <li><a href="tools.html" class="hover:underline">Herramientas</a></li>
+                    <li><a href="record_emotion.html" class="hover:underline font-bold">Registrar Emoción</a></li>
+                    <li><a href="history.html" class="hover:underline">Historial</a></li>
+                    <li><a href="settings.html" class="hover:underline">Configuración</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Registra tu Emoción</h2>
+            
+            <form id="emotionForm" class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Fecha y Hora
+                    </label>
+                    <input type="datetime-local" 
+                           id="dateTime" 
+                           class="w-full p-2 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200"
+                           required>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        ¿Cómo te sientes?
+                    </label>
+                    <div class="grid grid-cols-4 gap-4 mb-4">
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="feliz">
+                            <i class="fas fa-smile text-2xl text-yellow-500"></i>
+                            <span class="block mt-2">Feliz</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="triste">
+                            <i class="fas fa-sad-tear text-2xl text-blue-500"></i>
+                            <span class="block mt-2">Triste</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="enojado">
+                            <i class="fas fa-angry text-2xl text-red-500"></i>
+                            <span class="block mt-2">Enojado</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="tranquilo">
+                            <i class="fas fa-peace text-2xl text-green-500"></i>
+                            <span class="block mt-2">Tranquilo</span>
+                        </button>
+                    </div>
+                    <input type="hidden" id="selectedEmotion" required>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Intensidad
+                    </label>
+                    <input type="range" 
+                           id="intensity" 
+                           min="1" 
+                           max="10" 
+                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                           required>
+                    <div class="flex justify-between text-xs text-gray-600">
+                        <span>Baja</span>
+                        <span>Media</span>
+                        <span>Alta</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Notas adicionales
+                    </label>
+                    <textarea id="notes" 
+                              rows="4" 
+                              class="w-full p-2 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200"
+                              placeholder="¿Qué provocó esta emoción? ¿Cómo te sientes al respecto?"></textarea>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">
+                    Registrar Emoción
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
