@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - Komorebi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/settings.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-green-500 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Komorebi</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                    <li><a href="tools.html" class="hover:underline">Herramientas</a></li>
+                    <li><a href="record_emotion.html" class="hover:underline">Registrar Emoción</a></li>
+                    <li><a href="history.html" class="hover:underline">Historial</a></li>
+                    <li><a href="settings.html" class="hover:underline font-bold">Configuración</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Configuración</h2>
+
+            <!-- Personalización de Tema -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Personalización de Tema</h3>
+                
+                <!-- Color Principal -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Color Principal
+                    </label>
+                    <div class="flex items-center space-x-4">
+                        <input type="color" 
+                               id="primaryColor" 
+                               value="#22c55e"
+                               class="w-12 h-12 rounded cursor-pointer">
+                        <span class="text-sm text-gray-600">Este color se aplicará a la cabecera y botones principales</span>
+                    </div>
+                </div>
+
+                <!-- Color Secundario -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Color Secundario
+                    </label>
+                    <div class="flex items-center space-x-4">
+                        <input type="color" 
+                               id="secondaryColor" 
+                               value="#3b82f6"
+                               class="w-12 h-12 rounded cursor-pointer">
+                        <span class="text-sm text-gray-600">Este color se aplicará a elementos secundarios y acentos</span>
+                    </div>
+                </div>
+
+                <!-- Previsualización -->
+                <div class="mt-6 p-4 border rounded-lg">
+                    <h4 class="font-semibold mb-2">Previsualización</h4>
+                    <div id="preview" class="space-y-4">
+                        <div class="preview-header p-4 rounded"></div>
+                        <button class="preview-button px-4 py-2 rounded text-white">Botón de Ejemplo</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notificaciones -->
+            <section class="mb-8">
+                <h3 class="text-xl font-semibold mb-4">Notificaciones</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <input type="checkbox" 
+                               id="enableNotifications" 
+                               class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                        <label class="ml-2 text-gray-700">Activar notificaciones diarias</label>
+                    </div>
+
+                    <div id="notificationSettings" class="pl-6 space-y-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">
+                                Hora de notificación
+                            </label>
+                            <input type="time" 
+                                   id="notificationTime" 
+                                   class="p-2 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">
+                                Frecuencia
+                            </label>
+                            <select id="notificationFrequency" 
+                                    class="w-full p-2 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200">
+                                <option value="daily">Diaria</option>
+                                <option value="weekdays">Días laborables</option>
+                                <option value="custom">Personalizada</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botones de Acción -->
+            <div class="flex justify-end space-x-4">
+                <button id="resetSettings" 
+                        class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100">
+                    Restablecer
+                </button>
+                <button id="saveSettings" 
+                        class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                    Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
