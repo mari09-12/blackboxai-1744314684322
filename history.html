@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Emociones - Komorebi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="js/history.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-green-500 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Komorebi</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                    <li><a href="tools.html" class="hover:underline">Herramientas</a></li>
+                    <li><a href="record_emotion.html" class="hover:underline">Registrar Emoción</a></li>
+                    <li><a href="history.html" class="hover:underline font-bold">Historial</a></li>
+                    <li><a href="settings.html" class="hover:underline">Configuración</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Historial de Emociones Registradas</h2>
+        <div id="historyList" class="bg-white rounded-lg shadow-md p-6">
+            <!-- Las entradas de historial se cargarán dinámicamente aquí -->
+            <p class="text-center text-gray-600">No hay emociones registradas aún.</p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
