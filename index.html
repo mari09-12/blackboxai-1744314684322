@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komorebi - Gestión Emocional</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-green-500 p-4 text-white">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">Komorebi</h1>
+            <nav class="mt-2">
+                <ul class="flex space-x-6">
+                    <li><a href="tools.html" class="nav-link hover:text-white/80"><i class="fas fa-tools mr-2"></i>Herramientas</a></li>
+                    <li><a href="record_emotion.html" class="nav-link hover:text-white/80"><i class="fas fa-heart mr-2"></i>Registrar Emoción</a></li>
+                    <li><a href="history.html" class="nav-link hover:text-white/80"><i class="fas fa-history mr-2"></i>Historial</a></li>
+                    <li><a href="settings.html" class="nav-link hover:text-white/80"><i class="fas fa-cog mr-2"></i>Configuración</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <section class="text-center max-w-2xl mx-auto">
+            <h2 class="text-4xl font-semibold mb-6">Bienvenido a Komorebi</h2>
+            <p class="text-xl text-gray-600 mb-8">Una aplicación para la gestión emocional basada en mindfulness.</p>
+            <div class="space-y-4">
+                <a href="tools.html" class="inline-block bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105">
+                    <i class="fas fa-tools mr-2"></i>Explorar Herramientas
+                </a>
+                <p class="text-sm text-gray-500 mt-4">Descubre más de 200 herramientas para mejorar tu bienestar emocional</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <i class="fas fa-brain text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Mindfulness</h3>
+                    <p class="text-gray-600">Técnicas para vivir el presente con atención plena</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Seguimiento</h3>
+                    <p class="text-gray-600">Registra y analiza tus emociones diarias</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <i class="fas fa-lightbulb text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Herramientas</h3>
+                    <p class="text-gray-600">Recursos prácticos para el bienestar emocional</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
