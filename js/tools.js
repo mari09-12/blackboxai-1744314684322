@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createToolCard(tool) {
         const clone = toolTemplate.content.cloneNode(true);
         const card = clone.querySelector('.tool-card');
+        const chevron = clone.querySelector('.fa-chevron-down');
         
         // Set content
         clone.querySelector('.tool-name').textContent = tool.name;
@@ -79,26 +80,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add click handler for expanding/collapsing
         card.addEventListener('click', () => {
             const details = card.querySelector('.tool-details');
-            const isHidden = details.classList.contains('hidden');
+            const isExpanded = !details.classList.contains('hidden');
             
             // Close previously active card if different from current
             if (activeCard && activeCard !== card) {
                 const activeDetails = activeCard.querySelector('.tool-details');
+                const activeChevron = activeCard.querySelector('.fa-chevron-down');
                 activeDetails.classList.add('hidden');
                 activeCard.classList.remove('shadow-md', 'bg-gray-50');
                 activeCard.classList.add('shadow-sm', 'bg-white');
+                activeChevron.classList.remove('rotate-180');
             }
 
             // Toggle current card
-            if (isHidden) {
+            if (!isExpanded) {
                 details.classList.remove('hidden');
                 card.classList.remove('shadow-sm', 'bg-white');
                 card.classList.add('shadow-md', 'bg-gray-50');
+                chevron.classList.add('rotate-180');
                 activeCard = card;
             } else {
                 details.classList.add('hidden');
                 card.classList.remove('shadow-md', 'bg-gray-50');
                 card.classList.add('shadow-sm', 'bg-white');
+                chevron.classList.remove('rotate-180');
                 activeCard = null;
             }
         });
