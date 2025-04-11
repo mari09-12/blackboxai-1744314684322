@@ -3,90 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herramientas - Komorebi</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Komorebi - Herramientas</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="js/tools.js" defer></script>
+    <link rel="stylesheet" href="assets/theme.css">
+    <style>
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+        .tool-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .tool-details.show {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-green-500 p-4 text-white">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Komorebi</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="index.html" class="hover:underline">Inicio</a></li>
-                    <li><a href="tools.html" class="hover:underline font-bold">Herramientas</a></li>
-                    <li><a href="record_emotion.html" class="hover:underline">Registrar Emoción</a></li>
-                    <li><a href="history.html" class="hover:underline">Historial</a></li>
-                    <li><a href="settings.html" class="hover:underline">Configuración</a></li>
-                </ul>
-            </nav>
-        </div>
+<body class="bg-gray-50">
+    <header class="bg-green-500 p-4">
+        <nav class="container mx-auto">
+            <ul class="flex space-x-6 text-white">
+                <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                <li><a href="tools.html" class="hover:underline font-bold">Herramientas</a></li>
+                <li><a href="record_emotion.html" class="hover:underline">Registrar Emoción</a></li>
+                <li><a href="history.html" class="hover:underline">Historial</a></li>
+                <li><a href="settings.html" class="hover:underline">Configuración</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="container mx-auto p-6">
-        <div class="mb-8">
-            <h2 class="text-3xl font-semibold mb-4">Herramientas de Mindfulness y Gestión Emocional</h2>
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-semibold mb-6">Herramientas de Mindfulness y Gestión Emocional</h2>
             
             <!-- Filtros -->
-            <div class="mb-6 flex space-x-4">
-                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 active" data-category="all">
-                    Todas
+            <div class="mb-6 flex gap-2">
+                <button class="category-btn flex items-center px-4 py-2 rounded-full bg-green-500 text-white text-sm font-medium hover:bg-opacity-90 transition-colors" data-category="">
+                    <i class="fas fa-th mr-2"></i>Todas
                 </button>
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-category="mindfulness">
-                    Mindfulness
+                <button class="category-btn flex items-center px-4 py-2 rounded-full bg-blue-500 text-white text-sm font-medium hover:bg-opacity-90 transition-colors" data-category="mindfulness">
+                    <i class="fas fa-peace mr-2"></i>Mindfulness
                 </button>
-                <button class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600" data-category="otros">
-                    Otras Técnicas
+                <button class="category-btn flex items-center px-4 py-2 rounded-full bg-purple-500 text-white text-sm font-medium hover:bg-opacity-90 transition-colors" data-category="otros">
+                    <i class="fas fa-plus-circle mr-2"></i>Otras Técnicas
                 </button>
             </div>
 
-            <!-- Barra de búsqueda -->
-            <div class="mb-6">
+            <!-- Barra de Búsqueda -->
+            <div class="mb-8">
                 <input type="text" 
                        id="searchTools" 
                        placeholder="Buscar herramientas..." 
-                       class="w-full p-2 border border-gray-300 rounded shadow-sm focus:border-green-500 focus:ring focus:ring-green-200">
+                       class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white shadow-sm">
             </div>
 
-            <!-- Grid de herramientas -->
-            <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Las tarjetas de herramientas se cargarán dinámicamente aquí -->
-                <div class="animate-pulse">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
-                        <div class="h-4 bg-gray-200 rounded w-full mb-2"></div>
-                        <div class="h-4 bg-gray-200 rounded w-5/6"></div>
-                    </div>
-                </div>
+            <!-- Lista de Herramientas -->
+            <div id="toolsList" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Las herramientas se cargarán aquí dinámicamente -->
             </div>
         </div>
     </main>
 
-    <!-- Template para las tarjetas de herramientas -->
-    <template id="tool-template">
-        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <h3 class="text-xl font-semibold mb-3"></h3>
-            <div class="mb-4">
-                <span class="inline-block bg-green-100 text-green-800 text-sm px-2 py-1 rounded"></span>
+    <!-- Template para las herramientas -->
+    <template id="toolTemplate">
+        <div class="tool-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+            <div class="p-4">
+                <h3 class="text-lg font-medium tool-name"></h3>
+                <div class="tool-details">
+                    <div class="mt-4 space-y-4">
+                        <p class="tool-description text-gray-600"></p>
+                        <p class="tool-benefits text-gray-600"></p>
+                        <ol class="tool-steps space-y-2 text-gray-600 list-decimal list-inside pl-4">
+                        </ol>
+                    </div>
+                </div>
             </div>
-            <p class="text-gray-600 mb-4"></p>
-            <div class="mb-4">
-                <h4 class="font-semibold mb-2">¿Cómo funciona?</h4>
-                <p class="text-gray-600"></p>
-            </div>
-            <div>
-                <h4 class="font-semibold mb-2">Pasos a seguir:</h4>
-                <ol class="list-decimal list-inside text-gray-600"></ol>
-            </div>
-            <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
-                Ver más detalles
-            </button>
         </div>
     </template>
 
     <footer class="bg-gray-800 text-white text-center p-4 mt-8">
-        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Komorebi. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/tools.js"></script>
 </body>
 </html>
