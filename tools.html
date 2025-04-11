@@ -7,20 +7,6 @@
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/theme.css">
-    <style>
-        .tool-card {
-            transition: all 0.3s ease;
-        }
-        .tool-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .tool-details.show {
-            max-height: 1000px;
-            transition: max-height 0.5s ease-in;
-        }
-    </style>
 </head>
 <body class="bg-gray-50">
     <header class="bg-green-500 p-4">
@@ -71,12 +57,19 @@
     <template id="toolTemplate">
         <div class="tool-card bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
             <div class="p-4">
-                <h3 class="text-lg font-medium tool-name"></h3>
-                <div class="tool-details">
-                    <div class="mt-4 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-medium tool-name"></h3>
+                    <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
+                </div>
+                <div class="tool-details hidden mt-4 space-y-3">
+                    <div class="bg-gray-50 rounded-lg p-3">
                         <p class="tool-description text-gray-600"></p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
                         <p class="tool-benefits text-gray-600"></p>
-                        <ol class="tool-steps space-y-2 text-gray-600 list-decimal list-inside pl-4">
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
+                        <ol class="tool-steps space-y-2 text-gray-600 list-decimal list-inside">
                         </ol>
                     </div>
                 </div>
