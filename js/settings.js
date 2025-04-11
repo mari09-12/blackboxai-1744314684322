@@ -42,8 +42,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Actualizar previsualización
     function updatePreview() {
-        previewHeader.style.backgroundColor = primaryColorInput.value;
-        previewButton.style.backgroundColor = primaryColorInput.value;
+        const primaryColor = primaryColorInput.value;
+        const secondaryColor = secondaryColorInput.value;
+
+        // Actualizar elementos de previsualización
+        if (previewHeader) {
+            previewHeader.style.backgroundColor = primaryColor;
+        }
+        if (previewButton) {
+            previewButton.style.backgroundColor = primaryColor;
+        }
+
+        // Actualizar elementos globales
+        document.documentElement.style.setProperty('--primary-color', primaryColor);
+        document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+
+        // Actualizar header y botones en tiempo real
+        document.querySelectorAll('.bg-green-500').forEach(el => {
+            el.style.backgroundColor = primaryColor;
+        });
+
+        // Actualizar efectos hover
+        document.querySelectorAll('.hover\\:bg-green-600').forEach(button => {
+            const originalColor = primaryColor;
+            button.addEventListener('mouseenter', () => {
+                button.style.backgroundColor = adjustColor(originalColor, -20);
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.backgroundColor = originalColor;
+            });
+        });
     }
 
     // Guardar configuraciones
@@ -70,12 +98,46 @@ document.addEventListener('DOMContentLoaded', () => {
         // Aplicar tema globalmente
         document.documentElement.style.setProperty('--primary-color', settings.theme.primaryColor);
         document.documentElement.style.setProperty('--secondary-color', settings.theme.secondaryColor);
+        
+        // Actualizar elementos con las nuevas clases de color
+        const headers = document.querySelectorAll('header');
+        headers.forEach(header => {
+            header.style.backgroundColor = settings.theme.primaryColor;
+        });
+
+        const buttons = document.querySelectorAll('.bg-green-500, .hover\\:bg-green-600');
+        buttons.forEach(button => {
+            button.style.backgroundColor = settings.theme.primaryColor;
+            button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = adjustColor(settings.theme.primaryColor, -10);
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = settings.theme.primaryColor;
+            });
+        });
+
+        // Actualizar focus rings y bordes
+        const focusElements = document.querySelectorAll('.focus\\:border-green-500, .focus\\:ring-green-200');
+        focusElements.forEach(element => {
+            element.style.setProperty('--tw-ring-color', settings.theme.primaryColor + '33');
+            element.style.setProperty('--tw-ring-offset-color', settings.theme.primaryColor);
+        });
 
         // Configurar notificaciones
         if (settings.notifications.enabled) {
             requestNotificationPermission();
             scheduleNotifications(settings.notifications);
         }
+    }
+
+    // Función auxiliar para ajustar el color (oscurecer/aclarar)
+    function adjustColor(color, amount) {
+        const hex = color.replace('#', '');
+        const num = parseInt(hex, 16);
+        const r = Math.min(255, Math.max(0, (num >> 16) + amount));
+        const g = Math.min(255, Math.max(0, ((num >> 8) & 0x00FF) + amount));
+        const b = Math.min(255, Math.max(0, (num & 0x0000FF) + amount));
+        return '#' + (b | (g << 8) | (r << 16)).toString(16).padStart(6, '0');
     }
 
     // Solicitar permiso para notificaciones
