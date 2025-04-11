@@ -4,80 +4,56 @@
       "id": 1,
       "name": "Respiración Consciente",
       "category": "mindfulness",
-      "description": "Una técnica fundamental de mindfulness que ayuda a anclar la atención en el momento presente a través de la respiración.",
-      "howItWorks": "Esta técnica utiliza la respiración como punto de enfoque para desarrollar la atención plena y reducir el estrés. Al concentrarnos en la respiración, naturalmente alejamos la mente de preocupaciones y pensamientos dispersos.",
+      "description": "Una técnica simple pero efectiva para reducir el estrés y aumentar la calma.",
+      "howItWorks": "Al enfocar tu atención en la respiración, reduces la actividad mental y activas el sistema nervioso parasimpático.",
       "steps": [
-        "Encuentra una posición cómoda, sentado o acostado",
-        "Cierra suavemente los ojos",
-        "Centra tu atención en el flujo natural de tu respiración",
-        "Observa las sensaciones del aire entrando y saliendo",
-        "Cuando tu mente divague, reconócelo sin juzgar",
-        "Gentilmente regresa tu atención a la respiración",
-        "Practica por 5-10 minutos inicialmente"
+        "Siéntate o acuéstate cómodamente",
+        "Respira naturalmente por la nariz",
+        "Observa cómo el aire entra y sale",
+        "Cuando tu mente divague, vuelve suavemente a la respiración",
+        "Practica por 5-10 minutos"
       ]
     },
     {
       "id": 2,
       "name": "Escaneo Corporal",
       "category": "mindfulness",
-      "description": "Una práctica de atención plena que implica observar sistemáticamente las sensaciones en diferentes partes del cuerpo.",
-      "howItWorks": "El escaneo corporal ayuda a desarrollar una mayor conciencia de las sensaciones físicas y la conexión mente-cuerpo. También puede ayudar a identificar y liberar tensiones acumuladas.",
+      "description": "Una práctica para desarrollar consciencia corporal y reducir tensiones.",
+      "howItWorks": "Al recorrer sistemáticamente tu cuerpo con atención, liberas tensión y aumentas la consciencia corporal.",
       "steps": [
-        "Acuéstate en una posición cómoda",
-        "Comienza enfocando tu atención en los dedos de los pies",
-        "Gradualmente mueve tu atención hacia arriba por todo el cuerpo",
-        "Observa cualquier sensación sin intentar cambiarla",
-        "Si encuentras tensión, imagina que se disuelve con cada exhalación",
-        "Continúa hasta llegar a la cabeza",
-        "Finaliza tomando consciencia del cuerpo como un todo"
+        "Acuéstate boca arriba",
+        "Lleva tu atención a los pies",
+        "Sube gradualmente por todo el cuerpo",
+        "Observa las sensaciones sin juzgar",
+        "Relaja cada parte que observes"
       ]
     },
     {
       "id": 3,
       "name": "Diario de Gratitud",
       "category": "otros",
-      "description": "Una práctica diaria de reconocimiento y apreciación de los aspectos positivos de la vida.",
-      "howItWorks": "El diario de gratitud ayuda a entrenar el cerebro para notar y apreciar lo positivo, lo que puede mejorar el estado de ánimo y la perspectiva general de la vida.",
+      "description": "Una práctica para cultivar apreciación y positividad.",
+      "howItWorks": "Escribir sobre lo que agradeces entrena tu mente para notar lo positivo en tu vida.",
       "steps": [
-        "Dedica un momento específico del día para esta práctica",
-        "Escribe tres cosas por las que te sientes agradecido hoy",
-        "Incluye el por qué te sientes agradecido por cada cosa",
-        "Sé específico en tus anotaciones",
-        "Intenta no repetir las mismas cosas cada día",
-        "Reflexiona sobre cómo te sientes al escribir",
-        "Revisa entradas anteriores cuando necesites inspiración"
+        "Toma un cuaderno y bolígrafo",
+        "Escribe 3 cosas que agradeces hoy",
+        "Explica por qué las agradeces",
+        "Siente la gratitud mientras escribes",
+        "Practica diariamente"
       ]
     },
     {
       "id": 4,
-      "name": "Meditación de la Bondad Amorosa",
-      "category": "mindfulness",
-      "description": "Una práctica que cultiva sentimientos de amor, compasión y bondad hacia uno mismo y los demás.",
-      "howItWorks": "Esta meditación ayuda a desarrollar empatía y conexión emocional, reduciendo sentimientos de aislamiento y aumentando el bienestar emocional.",
-      "steps": [
-        "Siéntate en una posición cómoda y cierra los ojos",
-        "Comienza enviando deseos de bienestar hacia ti mismo",
-        "Expande estos deseos hacia un ser querido",
-        "Luego hacia una persona neutral",
-        "Después hacia alguien con quien tengas dificultades",
-        "Finalmente, hacia todos los seres",
-        "Termina regresando la atención a tu propio bienestar"
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Técnica RAIN para Emociones Difíciles",
+      "name": "Ancla Emocional",
       "category": "otros",
-      "description": "Un método estructurado para manejar emociones intensas o desafiantes.",
-      "howItWorks": "RAIN es un acrónimo que representa: Reconocer, Aceptar, Investigar y Nutrir. Esta técnica ayuda a procesar emociones de manera consciente y compasiva.",
+      "description": "Una técnica para mantener la calma en situaciones difíciles.",
+      "howItWorks": "Creas una asociación entre un gesto simple y un estado emocional positivo.",
       "steps": [
-        "R - Reconoce la emoción presente",
-        "A - Acepta la experiencia tal como es",
-        "I - Investiga con curiosidad y cuidado",
-        "N - Nutre con autocompasión",
-        "Toma tiempo para sentir el efecto de cada paso",
-        "No te apresures en el proceso",
-        "Practica regularmente para mayor efectividad"
+        "Elige un gesto simple (como juntar pulgar e índice)",
+        "Recuerda un momento de calma y seguridad",
+        "Realiza el gesto mientras revives ese momento",
+        "Practica la asociación varias veces",
+        "Usa el gesto cuando necesites calmarte"
       ]
     }
   ]
