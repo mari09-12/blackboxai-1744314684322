@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Emoción - Komorebi</title>
+    <title>Komorebi - Registro de Emociones</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/theme.css">
+    <script src="js/theme.js" defer></script>
     <script src="js/emotions.js" defer></script>
 </head>
 <body class="bg-gray-100">
@@ -60,8 +62,88 @@
                             <i class="fas fa-peace text-2xl text-green-500"></i>
                             <span class="block mt-2">Tranquilo</span>
                         </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="ansiedad">
+                            <i class="fas fa-wind text-2xl text-purple-500"></i>
+                            <span class="block mt-2">Ansiedad</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="frustracion">
+                            <i class="fas fa-bomb text-2xl text-gray-700"></i>
+                            <span class="block mt-2">Frustración</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="verguenza">
+                            <i class="fas fa-mask text-2xl text-pink-500"></i>
+                            <span class="block mt-2">Vergüenza</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="culpa">
+                            <i class="fas fa-gavel text-2xl text-gray-800"></i>
+                            <span class="block mt-2">Culpa</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="desconfianza">
+                            <i class="fas fa-user-shield text-2xl text-orange-500"></i>
+                            <span class="block mt-2">Desconfianza</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="aburrimiento">
+                            <i class="fas fa-meh text-2xl text-gray-500"></i>
+                            <span class="block mt-2">Aburrimiento</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="satisfaccion">
+                            <i class="fas fa-star text-2xl text-yellow-400"></i>
+                            <span class="block mt-2">Satisfacción</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="odio">
+                            <i class="fas fa-heart-broken text-2xl text-red-700"></i>
+                            <span class="block mt-2">Odio</span>
+                        </button>
+                        <button type="button" class="emotion-btn p-4 border rounded hover:bg-gray-100 focus:ring-2 focus:ring-green-500" data-emotion="melancolia">
+                            <i class="fas fa-cloud-rain text-2xl text-blue-400"></i>
+                            <span class="block mt-2">Melancolía</span>
+                        </button>
                     </div>
                     <input type="hidden" id="selectedEmotion" required>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Síntomas físicos (opcional)
+                    </label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="tension_muscular" class="form-checkbox text-green-500">
+                            <span>Tensión muscular</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="temblores" class="form-checkbox text-green-500">
+                            <span>Temblores</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="ritmo_cardiaco" class="form-checkbox text-green-500">
+                            <span>Aumento del ritmo cardíaco</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="sudoracion" class="form-checkbox text-green-500">
+                            <span>Sudoración</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="ruborizacion" class="form-checkbox text-green-500">
+                            <span>Ruborización</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="mareos" class="form-checkbox text-green-500">
+                            <span>Mareos</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="hiperventilacion" class="form-checkbox text-green-500">
+                            <span>Hiperventilación</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="irritabilidad" class="form-checkbox text-green-500">
+                            <span>Irritabilidad</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="symptoms" value="presion_pecho" class="form-checkbox text-green-500">
+                            <span>Presión en el pecho</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div>
@@ -100,7 +182,7 @@
     </main>
 
     <footer class="bg-gray-800 text-white text-center p-4 mt-8">
-        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Komorebi. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
