@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuración - Komorebi</title>
+    <title>Komorebi - Configuración</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/theme.css">
+    <script src="js/theme.js" defer></script>
     <script src="js/settings.js" defer></script>
 </head>
 <body class="bg-gray-100">
@@ -64,8 +66,12 @@
                 <div class="mt-6 p-4 border rounded-lg">
                     <h4 class="font-semibold mb-2">Previsualización</h4>
                     <div id="preview" class="space-y-4">
-                        <div class="preview-header p-4 rounded"></div>
+                        <div class="preview-header p-4 rounded text-white">Encabezado de Ejemplo</div>
                         <button class="preview-button px-4 py-2 rounded text-white">Botón de Ejemplo</button>
+                        <div class="preview-elements grid grid-cols-2 gap-4 mt-4">
+                            <div class="p-3 border rounded focus-ring">Campo de Texto</div>
+                            <div class="p-3 border rounded hover-effect">Elemento Hover</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -122,7 +128,7 @@
     </main>
 
     <footer class="bg-gray-800 text-white text-center p-4 mt-8">
-        <p>&copy; 2023 Komorebi. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Komorebi. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
